@@ -1,0 +1,4 @@
+# example of post-install script
+# please notes MANDATORY : NO leading slash in commands
+. lib/lsb/init-functions
+log_success_msg2  "${INFO} usr/bin/template file created successfully ${NORMAL}"

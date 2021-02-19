@@ -1,0 +1,99 @@
+# description is mandatory
+description="This a template package for training purpose"
+url="https://www.nutyx.org"
+
+
+packager="tnut <tnut@nutyx.org>"
+# contributors variable list contains all
+# the contributors that has been involved in this 
+# package in the past
+# contributors="Fanch, Remy, Spiky"
+
+makedepends=(sed)
+
+# Runtime dependencies are useless as you will need all the 
+# makedepends depencies installed on your machine to compile
+# properly this package
+
+#name variable is not mandatory but highly recomended
+#name=template
+# version is mandatory
+version=0.0
+
+# release is only needed in case of a recompilation issue
+# after a change in the makedepends variable list for example
+
+#
+# Following variables make your packaging process cleaner
+# and simpler. Most of those settings are the defaults
+# onces when you install cards.devel package.
+# A user package construction is somehow very specific.
+# Double check and adapt them to your need
+#
+# Don't Clean up when your package is installed
+# Onces install we don't need to keep the archive, beter to 
+# cleanup the produced archive
+PKGMK_CLEAN="no"
+#
+# As we don't keep the archive, we don't need to compress it
+# will save us a lot of time if the package is big.
+PKGMK_COMPRESS_PACKAGE="no"
+#
+# Again as we don't distribute this package format
+# let's make the package simple without groups
+# Means everything will be include in the base package:
+# devel,man,doc,lib and service if any.
+PKGMK_GROUPS=()
+#
+# Don't need any local do you ?
+PKGMK_LOCALES=()
+#
+# Do not keep sources files after a successfull compilation
+PKGMK_KEEP_SOURCES="no"
+#
+# As we going to remove everything once's the package is done:
+# Working directory can be the current directory/work directory
+PKGMK_WORK_DIR="$PWD/work"
+#
+# As this package is only used locally, we need to create
+# a repo locally
+
+PKGMK_IGNORE_REPO="no"
+PKGMK_IGNORE_COLLECTION="no"
+# 
+# To compile this package we done need to take care of runtimes deps
+# as they need to be installed anyway to compile the package
+# So just put your runtime dependencies together with makedepends
+# list
+PKGMK_IGNORE_RUNTIMEDEPS="yes"
+#
+# Strongly recommended to removed all the la libs as it might 
+# make big troubles in case. 
+# But some case you HAVE to keep them.
+# It's a matter of experience. Ask the NuTyX team in doubht
+PKGMK_KEEP_LA_LIBS="no"
+# The source list variable contains all the files needed for the
+# compilation of the package
+source=(https://download.tuxfamily.org/nutyx/files/template-$version.tar.gz)
+
+# prepare function is optionnal
+# use this function to prepare the compilation process
+# applying patchs
+# prepare() {
+#    cd $name-$version
+#    patch -Np1 -i ../patchname.patch
+# }
+
+# build function not mandatory if default
+# build() {
+#  cd $name-$version
+#  make
+#  make DESTDIR=$PKG install
+#  }
+
+# package function is optional
+# use this function if you need to cleanup some files in 
+# the package files structure
+# package() {
+#  rm -d $PKG/tmp
+# }
