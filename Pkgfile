@@ -33,7 +33,7 @@ version=0.0
 # Don't Clean up when your package is installed
 # Onces install we don't need to keep the archive, beter to 
 # cleanup the produced archive
-PKGMK_CLEAN="no"
+PKGMK_CLEAN="yes"
 #
 # As we don't keep the archive, we don't need to compress it
 # will save us a lot of time if the package is big.
