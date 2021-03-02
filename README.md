@@ -18,13 +18,13 @@ How to proceed:
 ```bash
    git clone https://github.com/NuTyX-packages/template.git
 ```
-## Make sure you add the $PWD directory in your /etc/cards.conf as new repository directiory (in my example /hone/tnut/NuTyX-packages
+## Make sure you add the $PWD (in my example /hone/tnut/NuTyX-packages) directory in your /etc/cards.conf as new repository directiory 
 
 ```bash
 # No global url should be defined
 # We need to specify an url only for remote repositories collection
 #
-# Default server URL
+# Default global server URL 
 # url http://downloads.nutyx.org
 #
 # My own repository (this repository) without specified url 
@@ -34,7 +34,7 @@ dir /home/tnut/NuTyX-packages
 # Comment following line
 # If you don't want to install any of those interfaces
 #
-dir /var/lib/pkg/depot/desktops
+dir /var/lib/pkg/depot/desktops|http://downloads.nutyx.org
 #
 ## For all the graphical applications
 dir /var/lib/pkg/depot/gui-extra|http://downloads.nutyx.org
@@ -66,3 +66,20 @@ base ${DEPOT}/base
 ```
 
 ### Notes that the global url is commented and a new url is specified for each remote repository.
+
+## You are now ready to build, install and let cards been inform about this package:
+
+```bash
+   cd template
+   pkgmk -d -i
+```
+
+## To see if cards knows your package:
+
+```bash
+   cards info -b template
+   cards info templace
+```
+
+## Congratulations, you manage your first own package repository
+
