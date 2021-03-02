@@ -4,22 +4,23 @@ The script will be install in $DESTDIR/usr/bin/ directory.
 
 How to proceed:
 
-1/ Open a terminal
+## Open a terminal
 
-2/ create a new repository root directory:
-
+## create a new repository root directory:
+```bash
    mkdir NuTyX-packages
-
-3/  change to this directory
-
+```
+##  change to this directory
+```bash
    cd NuTyX-packages
-
-4/ clone this package:
-
+```
+## clone this package:
+```bash
    git clone https://github.com/NuTyX-packages/template.git
+```
+## Make sure you add the $PWD directory in your /etc/cards.conf as new repository directiory (in my example /hone/tnut/NuTyX-packages
 
-5/ Make sure you add the $PWD directory in your /etc/cards.conf as new repository directiory (in my example /hone/tnut/NuTyX-packages
-
+```bash
 # No global url should be defined
 # We need to specify an url only for remote repositories collection
 #
@@ -62,5 +63,6 @@ base ${DEPOT}/base
 # base /var/lib/pkg/depot//gui
 # base /var/lib/pkg/depot/gui-extra
 # base /var/lib/pkg/depot/...
+```
 
-6/ Notes that the global url is commented and a new url is specified for each remote repository.
+### Notes that the global url is commented and a new url is specified for each remote repository.
