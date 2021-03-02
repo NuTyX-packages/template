@@ -52,7 +52,7 @@ dir /var/lib/pkg/depot/cli|http://downloads.nutyx.org
 dir /var/lib/pkg/depot/base|http://downloads.nutyx.org
 #
 ## Normaly you want to keep base and
-base ${DEPOT}/base
+base /var/lib/pkg/depot/base
 #
 #
 ## If you want to keep more collections remove comments below
