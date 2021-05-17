@@ -6,15 +6,19 @@ How to proceed:
 
 ## Open a terminal
 
-## create a new repository root directory:
+## Install the cards devel package and git if not yet installed:
+```bash
+   cards install cards.devel git
+```
+## Create a new repository root directory:
 ```bash
    mkdir NuTyX-packages
 ```
-##  change to this directory
+## Change to this directory
 ```bash
    cd NuTyX-packages
 ```
-## clone this package:
+## Clone this package:
 ```bash
    git clone https://github.com/NuTyX-packages/template.git
 ```
@@ -30,13 +34,7 @@ How to proceed:
 # My own repository (this repository) without specified url 
 dir /home/tnut/NuTyX-packages
 #
-## For all the main desktops (KDE,XFCE,LXDE,MATE)
-# Comment following line
-# If you don't want to install any of those interfaces
-#
-dir /var/lib/pkg/depot/desktops|http://downloads.nutyx.org
-#
-## For all the graphical applications
+## For all the graphical applications and desktops
 dir /var/lib/pkg/depot/gui-extra|http://downloads.nutyx.org
 #
 ## For a minimal graphical interface
